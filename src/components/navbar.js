@@ -16,9 +16,6 @@ export default () => (
 
   <div id="navbarBasicExample" className="navbar-menu">
     <div className="navbar-end">
-      <a className="navbar-item" href="/" >
-        Home
-      </a>
 
       <a className="navbar-item" href="/trips" >
         Trips
