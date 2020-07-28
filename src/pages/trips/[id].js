@@ -36,7 +36,7 @@ export default ({trip}) => {
         <section>
         <div className="container">
         <div className="tile is-ancestor">
-          <div className="tile is-parent is-vertical">
+          <div className="tile is-parent">
           { trip.pictures.map(picture => (
             <div className="tile is-child is-4">
               <img src={picture.formats.small.url} alt="Jacar Photo" ></img>
