@@ -37,7 +37,7 @@ export default ({trips}) => (
   )
   
   export async function getStaticProps() {
-    const res = await fetch("https://jacar-strapi.herokuapp.com/trips")
+    const res = await fetch(process.env.API_URL + "/trips")
     const trips = await res.json()
     return {
       props : {
