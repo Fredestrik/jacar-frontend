@@ -53,20 +53,17 @@ export default ({trip}) => {
 // This function gets called at build time
 export async function getStaticPaths() {
   return {
-    // Only `/posts/1` and `/posts/2` are generated at build time
-    paths: [{ params: { id: '1' } }, { params: { id: '2' } }],
-    // Enable statically generating additional pages
-    // For example: `/posts/3`
+    paths: [{ params: { id: '2' } }],
     fallback: true,
   }
 }
 
 // This also gets called at build time
 export async function getStaticProps({ params }) {
-  // params contains the post `id`.
+  // params contains the `id`.
   const url = `${process.env.API_URL}/trips/${params.id}`
   const res = await fetch(url)
   const trip = await res.json()
-  // Pass post data to the page via props
+  // Pass trip data to the page via props
   return { props: {trip } }
 }
