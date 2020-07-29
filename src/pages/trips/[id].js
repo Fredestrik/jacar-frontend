@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import TripLevel from '../../components/tripLevel'
 
 export default ({trip}) => {
   const router = useRouter()
@@ -24,13 +25,16 @@ export default ({trip}) => {
       <section className="hero">
           <div className="hero-body">
             <div className="container">
-              <h1 className="title">
-                Trip : {trip.title}
+              <h1 className="title" style={{textAlign:"center"}}>
+                {trip.title}
               </h1>
-              <h2 className="subtitle">
-                region : {trip.region}
-              </h2>
+              <TripLevel trip={trip} />
             </div>
+          </div>
+        </section>
+        <section className="hero">
+          <div className="hero-body">
+          <div className="container"> {trip.description} </div>
           </div>
         </section>
         <section>

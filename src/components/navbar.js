@@ -3,7 +3,6 @@ export default () => (
 <nav className="navbar is-primary" role="navigation" aria-label="main navigation">
   <div className="navbar-brand">
     <a className="navbar-item" href="/">
-      <img src="/favicon-96x96.png" height="28"/>
       <h1><b>Jacar</b></h1>
     </a>
 
