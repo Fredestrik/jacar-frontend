@@ -1,4 +1,4 @@
-import Region from './region'
+import RegionPicture from './regionPicture'
 import Activity from './activity'
 import Period from './period'
 import Season from './season'
@@ -7,8 +7,8 @@ export default ({trip}) => (
     <nav class="level ">
         <div class="level-item has-text-centered">
             <div>
-            <p class="heading">Region</p>
-            <p class="title is-5"><Region region={trip.region} /></p>
+            <p class="heading">Région</p>
+            <p class="title is-5"><RegionPicture region={trip.region} /></p>
             </div>
         </div>
         <div class="level-item has-text-centered">
