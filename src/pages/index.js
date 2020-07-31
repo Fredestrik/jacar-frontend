@@ -1,49 +1,13 @@
-import TripLevel from '../components/tripLevel'
 import Region from '../components/region'
 import Activity from '../components/activity'
 import Period from '../components/period'
 import Season from '../components/season'
+import TripBox from '../components/tripBox'
 
-const regions = [
-  "AuvergneRhoneAlpes",
-  "BourgogneFrancheComte",
-  "Bretagne",
-  "CentreValdeLoire",
-  "Corse",
-  "GrandEst",
-  "HautsdeFrance",
-  "IledeFrance",
-  "Normandie",
-  "NouvelleAquitaine",
-  "Occitanie",
-  "PaysdelaLoire",
-  "ProvenceAlpesCotedAzur"
-]
-
-const activities = [
-  "Culture",
-  "City",
-  "Hiking_trek",
-  "Roadtrip",
-  "Biking",
-  "Watersports"
-]
-
-const periods = [
-  "Day",
-  "Weekend",
-  "_4or5Days",
-  "Week",
-  "_10Days",
-  "_2weeksormore"
-]
-
-const seasons = [
-  "spring",
-  "summer",
-  "automn",
-  "winter"
-]
+import activities from '../enums/activities'
+import regions from '../enums/regions'
+import seasons from '../enums/seasons'
+import periods from '../enums/periods'
 
 export default ({trips}) => (
     <main>
@@ -51,10 +15,10 @@ export default ({trips}) => (
           <div className="hero-body">
             <div className="container">
               <h1 className="title is-1" style={{textAlign:"center"}}>
-                Trips
+                Inspirez vos voyages
               </h1>
               <h2 className="subtitle is-3" style={{textAlign:"center"}}>
-                from Jacar Users
+                avec Jacar
               </h2>
               <div style={{ textAlign:"center"}}>
                 <div className="field mx-3" style={{display: "inline-block"}}>
@@ -62,7 +26,7 @@ export default ({trips}) => (
                   <div className="control">
                     <div className="select">
                       <select>
-                        { regions.map( region => (
+                        { Object.keys(regions).map( region => (
                           <option value={region}><Region region={region} /></option>
                         ))}
                       </select>
@@ -74,7 +38,7 @@ export default ({trips}) => (
                   <div className="control">
                     <div className="select">
                       <select>
-                        { activities.map( activity => (
+                        { Object.keys(activities).map( activity => (
                           <option value={activity}><Activity activity={activity}/></option>
                         ))}
                       </select>
@@ -86,7 +50,7 @@ export default ({trips}) => (
                   <div className="control">
                     <div className="select">
                       <select>
-                        { periods.map (period => (
+                        { Object.keys(periods).map (period => (
                           <option value={period}><Period period={period}/></option>
                         ))}
                       </select>
@@ -98,7 +62,7 @@ export default ({trips}) => (
                   <div className="control">
                     <div className="select">
                       <select>
-                        { seasons.map( season => (
+                        { Object.keys(seasons).map( season => (
                           <option value={season}><Season season={season} /></option> 
                         ))}
                       </select>
@@ -113,56 +77,7 @@ export default ({trips}) => (
         <div className="columns is-mobile is-centered">
           <div className="column is-full-mobile is-four-fifths-tablet">
           { trips.map(trip => (
-            <a href={"/trips/"+trip.id} >
-            <div className="container box my-6 mx-0">
-              <div class="columns is-mobile is-gapless">
-                  <div className="column is-6-mobile is-4-tablet">
-                    <p className="title">{trip.title}</p>
-                  </div>
-                  { trip.pictures[0]?.formats.thumbnail.url &&
-                  <div className="column is-1">
-                    <img src={trip.pictures[0].formats.thumbnail.url} alt="Jacar Photo" ></img>
-                  </div>
-                  }
-                  { trip.pictures[1]?.formats.thumbnail.url &&
-                  <div className="column is-1">
-                    <img src={trip.pictures[1].formats.thumbnail.url} alt="Jacar Photo" ></img>
-                  </div>
-                  }
-                  { trip.pictures[2]?.formats.thumbnail.url &&
-                  <div className="column is-1">
-                    <img src={trip.pictures[2].formats.thumbnail.url} alt="Jacar Photo" ></img>
-                  </div>
-                  }
-                  { trip.pictures[3]?.formats.thumbnail.url &&
-                  <div className="column is-1">
-                    <img src={trip.pictures[3]?.formats.thumbnail.url} alt="Jacar Photo" ></img>
-                  </div>
-                  }
-                  { trip.pictures[4]?.formats.thumbnail.url &&
-                  <div className="column is-1">
-                    <img src={trip.pictures[4].formats.thumbnail.url} alt="Jacar Photo" ></img>
-                  </div>
-                  }
-                  { trip.pictures[5]?.formats.thumbnail.url &&
-                  <div className="column is-1">
-                    <img src={trip.pictures[5].formats.thumbnail.url} alt="Jacar Photo" ></img>
-                  </div>
-                  }
-                  { trip.pictures[6]?.formats.thumbnail.url &&
-                  <div className="column is-1">
-                    <img src={trip.pictures[6].formats.thumbnail.url} alt="Jacar Photo" ></img>
-                  </div>
-                  }
-                  { trip.pictures[7]?.formats.thumbnail.url &&
-                  <div className="column is-1">
-                    <img src={trip.pictures[7]?.formats.thumbnail.url} alt="Jacar Photo" ></img>
-                  </div>
-                  }
-              </div>
-              <TripLevel trip={trip} />
-            </div>
-            </a>
+            <TripBox trip={trip} />
           ))}
           </div>
         </div>
