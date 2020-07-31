@@ -1,8 +1,8 @@
 export default {
-    "Culture" : {},
-    "City": {},
-    "Hiking_trek": {},
-    "Roadtrip": {},
-    "Biking": {},
-    "Watersports": {}
+    "Culture" : {name : "Culture"},
+    "City": {name: "City"},
+    "Hiking_trek": {name: "Randonnée, Trek"},
+    "Roadtrip": {name: "Road-Trip"},
+    "Biking": {name: "Vélo"},
+    "Watersports": {name: "Activités Nautiques"}
 }

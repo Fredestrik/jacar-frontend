@@ -39,7 +39,7 @@ export default ({trips}) => (
                     <div className="select">
                       <select>
                         { Object.keys(activities).map( activity => (
-                          <option value={activity}><Activity activity={activity}/></option>
+                          <option value={activity}><Activity activity={activity}/> {activities[activity].name}</option>
                         ))}
                       </select>
                     </div>
@@ -63,7 +63,7 @@ export default ({trips}) => (
                     <div className="select">
                       <select>
                         { Object.keys(seasons).map( season => (
-                          <option value={season}><Season season={season} /></option> 
+                          <option value={season}><Season season={season} /> {seasons[season].name}</option> 
                         ))}
                       </select>
                     </div>

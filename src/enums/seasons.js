@@ -1,6 +1,6 @@
 export default {
-    "spring" : {},
-    "summer" : {},
-    "automn" : {},
-    "winter" : {}
+    "spring" : {name : "Printemps"},
+    "summer" : {name : "Été"},
+    "automn" : {name : "Automne"},
+    "winter" : {name : "Hiver"}
 }
