@@ -12,7 +12,7 @@ export default function({ Component, pageProps }) {
       <Component {...pageProps} />
       <footer className="footer">
         <div className="content has-text-centered">
-          Powered by <img src="/favicon-96x96.png" alt="Jacar Logo" width="20"/> Jacar
+          Powered by <a href="/about" ><img src="/favicon-96x96.png" alt="Jacar Logo" width="20"/> Jacar </a>
         </div>
       </footer>
     </div>
